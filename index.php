@@ -1,13 +1,36 @@
 <?php
+
 // Require composer autoloader
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-// Create Router instance
-$router = new \Bramus\Router\Router();
+final class App
+{
 
-$router->get('/', function() { echo 'Index1'; });
-$router->get('/hello', function() { echo 'Hello!'; });
+    public $router = null;
+    public $loader = null;
+    public $twig = null;
 
+    public function __construct()
+    {
 
-// Run it!
-$router->run();
+        $this->router = new \Bramus\Router\Router();
+        $this->loader = new \Twig\Loader\FilesystemLoader('views');
+        $this->twig = new \Twig\Environment($this->loader, ['cache' => 'views/cache',]);
+    }
+
+    function start()
+    {
+        $this->router->get('/', function () {
+            echo $this->twig->render('index1.html', ['the' => 'variables', 'go' => 'here']);
+        });
+
+        $this->router->get('/hello', function () {
+            echo $this->twig->render('index2.html', ['the' => 'variables', 'go' => 'here']);
+        });
+
+        $this->router->run();
+    }
+}
+
+$app = new App();
+$app->start();
