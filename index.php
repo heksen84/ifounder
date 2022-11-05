@@ -15,7 +15,8 @@ final class App
 
         $this->router = new \Bramus\Router\Router();
         $this->loader = new \Twig\Loader\FilesystemLoader('views');
-        $this->twig = new \Twig\Environment($this->loader, ['cache' => 'views/cache',]);
+       // $this->twig = new \Twig\Environment($this->loader, ['cache' => 'views/cache',]);
+	 $this->twig = new \Twig\Environment($this->loader);
     }
 
     function start()

@@ -34,7 +34,9 @@ class __TwigTemplate_c98d809dec3f3cbbbff6bf0660db5b1288ec204945baa9adfcd069a8c16
     {
         $macros = $this->macros;
         // line 1
-        echo "hello world";
+        echo "<center>
+<h1>hello world</h1>
+</center>";
     }
 
     public function getTemplateName()
