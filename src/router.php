@@ -8,17 +8,17 @@ class Router {
     public $twig;
     public $companies;
 
-    public function __construct($twig)
+    public function __construct($twig, $db)
     {
         $this->router = new \Bramus\Router\Router();     
 	$this->twig = $twig;
-	$this->companies = new Companies();
+	$this->companies = new Companies($db);
     }
 
     function init()
     {
         $this->router->get('/', function () {
-            echo $this->twig->render('index.html', ['name' => time(), 'companies' => []/*$this->companies->get()*/ ]);
+            echo $this->twig->render('index.html', ['name' => time(), 'companies' => $this->companies->get() ]);
         });
 
         $this->router->get('/login', function () {
