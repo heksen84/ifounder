@@ -32,6 +32,10 @@ class Router {
             echo $this->twig->render('register.html');
         });
 
+	$this->router->get('/home', function () {
+            echo $this->twig->render('home.html');
+        });
+
         $this->router->run();
     }
 
