@@ -44,6 +44,10 @@ class Router {
             echo $this->twig->render('companies.html');
         });
 
+	$this->router->get('/add', function () {
+            echo $this->twig->render('add.html');
+        });
+
 	$this->router->get('/404', function () {
             echo $this->twig->render('404.html');
         });
