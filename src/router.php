@@ -36,6 +36,10 @@ class Router {
             echo $this->twig->render('home.html');
         });
 
+	$this->router->get('/news', function () {
+            echo $this->twig->render('news.html');
+        });
+
         $this->router->run();
     }
 
