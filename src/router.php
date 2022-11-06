@@ -1,17 +1,20 @@
 <?php
 
+require_once __DIR__ .'/users.php';
 require_once __DIR__ .'/companies.php';
 
 class Router {
  
     public $router;
     public $twig;
+    public $users;
     public $companies;
 
     public function __construct($twig, $db)
     {
         $this->router = new \Bramus\Router\Router();     
 	$this->twig = $twig;
+	$this->users = new Users($db);
 	$this->companies = new Companies($db);
     }
     
