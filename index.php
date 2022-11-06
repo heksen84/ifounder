@@ -9,15 +9,10 @@ final class App
 {
 
     public $router = null;
-    public $loader = null;
-    public $twig = null;
 
     public function __construct()
     {
-
-        $this->loader = new \Twig\Loader\FilesystemLoader('views');
-        $this->twig = new \Twig\Environment($this->loader/*, ['cache' => 'views/cache',]*/);
-        $this->router = new Router($this->twig);
+        $this->router = new Router(new \Twig\Environment(new \Twig\Loader\FilesystemLoader('views')/*, ['cache' => 'views/cache',]*/));
     }
 
     function start()
