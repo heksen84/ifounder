@@ -10,4 +10,10 @@ class Companies
         return 'wait'; //$this->db->select()->from('users')->execute();
     
      }
+
+    public function getById()
+    {
+        return 'wait'; //$this->db->select()->from('users')->execute();
+    
+     }
 }
