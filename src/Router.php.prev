@@ -4,16 +4,13 @@ require_once __DIR__ .'/companies.php';
 
 class Router {
  
-    public $router;
-    public $twig;
-    public $companies;
+    // php 8 style
+    public function __construct(
 
-    public function __construct($twig)
-    {
-        $this->router = new \Bramus\Router\Router();     
-	$this->twig = $twig;
-	$this->companies = new Companies();
-    }
+	public $router = new \Bramus\Router\Router(),
+	public $twig = $twig,
+	public $companies = new Companies()
+	) {}
 
     function init()
     {
