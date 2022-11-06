@@ -11,5 +11,3 @@ $router = new Router(
  new \Twig\Environment(new \Twig\Loader\FilesystemLoader('views')),
  new FaaPz\PDO\Database(DSN, USR, PWD)
 );
-	
-$router->init();
