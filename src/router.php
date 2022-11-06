@@ -40,6 +40,10 @@ class Router {
             echo $this->twig->render('news.html');
         });
 
+	$this->router->get('/companies', function () {
+            echo $this->twig->render('companies.html');
+        });
+
         $this->router->run();
     }
 
