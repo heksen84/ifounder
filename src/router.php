@@ -13,8 +13,10 @@ class Router {
         $this->router = new \Bramus\Router\Router();     
 	$this->twig = $twig;
 	$this->companies = new Companies($db);
-
-	// --
+    }
+    
+    public function init() 
+    {
         $this->router->get('/', function () {
             echo $this->twig->render('index.html', ['name' => time(), 'companies' => $this->companies->get() ]);
         });
@@ -29,4 +31,5 @@ class Router {
 
         $this->router->run();
     }
+
 }
