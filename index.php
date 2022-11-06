@@ -1,12 +1,9 @@
 <?php
-
-// Require composer autoloader
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/router.php';
 
 final class App
 {
-
     const DSN = 'mysql:host=localhost;dbname=carlar;charset=utf8';
     const USR = 'root';
     const PWD = '';
