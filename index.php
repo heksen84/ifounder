@@ -1,9 +1,8 @@
 <?php
 
 // Require composer autoloader
-require __DIR__ . '/vendor/autoload.php';
-require __DIR__ .'/src/router.php';
-require __DIR__ .'/src/companies.php';
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ .'/src/router.php';
 
 final class App
 {
