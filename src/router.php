@@ -18,7 +18,7 @@ class Router {
     function init()
     {
         $this->router->get('/', function () {
-            echo $this->twig->render('index.html', ['name' => time(), 'companies' => []/*$this->companies->getCompanies()*/ ]);
+            echo $this->twig->render('index.html', ['name' => time(), 'companies' => []/*$this->companies->get()*/ ]);
         });
 
         $this->router->get('/login', function () {

@@ -6,7 +6,6 @@ require_once __DIR__ . '/src/router.php';
 
 final class App
 {
-
     public $router = null;
 
     public function __construct()
