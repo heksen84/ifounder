@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ .'/users.php';
-require_once __DIR__ .'/companies.php';
+require_once __DIR__ .'/models/users.php';
+require_once __DIR__ .'/models/companies.php';
 
 class Router {
  
