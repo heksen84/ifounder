@@ -1,12 +1,19 @@
+<!DOCTYPE html>
 <title>Бизнес в Казахстане</title>
+<html>
+<head>
+<link rel="stylesheet" href="./public/css/bootstrap.min.css">
+</head>
 <center>
-<a href="/login">login</a>
-<a href="/register">register</a>
+
 <h1>Каталог компаний Казахстана</h1>
 <a href="/add">Добавить бизнес</a>
 <br>
+<a href="/login">login</a>
+<a href="/register">register</a>
 <br>
 {% for company in companies %}
 <li>{{ company.id }} {{ company.name }} {{ company.email }}</li>
 {% endfor %}
 </center>
+</html>
